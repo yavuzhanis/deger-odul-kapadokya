@@ -15,6 +15,81 @@
     <link href="css/vendors.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link id="colors" href="css/colors/scheme-01.css" rel="stylesheet" type="text/css">
+    <style>
+        /* Hamburger buton varsayılan gizli */
+        #menu-btn {
+            display: none;
+            /* masaüstünde gizle */
+        }
+        /* Mobilde aktif et */
+        @media (max-width: 991px) {
+            #menu-btn {
+                display: inline-block;
+                width: 40px;
+                height: 40px;
+                /* altın arka plan */
+                color: white;
+                /* ikon rengi */
+                font-size: 22px;
+                border-radius: 6px;
+                text-align: center;
+                line-height: 40px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+
+            #menu-btn:before {
+                content: "\2630";
+                /* ☰ (hamburger simgesi) */
+                font-family: Arial, sans-serif;
+            }
+
+            #menu-btn:hover {
+                background: #705304;
+                color: #fff;
+            }
+
+            /* Mobil menü */
+            #mainmenu {
+                display: none;
+                background: rgba(0, 0, 0, 0.95);
+                position: absolute;
+                top: 70px;
+                right: 15px;
+                width: 220px;
+                border-radius: 6px;
+                padding: 15px;
+                z-index: 1000;
+            }
+
+            #mainmenu.show {
+                display: block;
+            }
+
+            #mainmenu li {
+                margin-bottom: 10px;
+            }
+
+            #mainmenu li a {
+                color: #c59309;
+                font-weight: 500;
+            }
+        }
+    </style>
+    <script>
+        /* Menü aç/kapat */
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuBtn = document.getElementById("menu-btn");
+            const mainMenu = document.getElementById("mainmenu");
+
+            if (menuBtn && mainMenu) {
+                menuBtn.addEventListener("click", function () {
+                    mainMenu.classList.toggle("show");
+                });
+            }
+        });
+    </script>
+
 </head>
 
 <body class="dark-scheme">
@@ -38,7 +113,8 @@
                                     <a href="index.html">
                                         <img class="logo-main" src="images/gc.png" alt="logo-main">
                                         <img class="logo-scroll" src="images/gc.png" alt="logo-scroll">
-                                        <img class="logo-mobile" src="images/gc.png" alt="logo-mobile" width="70"  height="70">
+                                        <img class="logo-mobile" src="images/gc.png" alt="logo-mobile" width="70"
+                                            height="70">
                                     </a>
                                 </div>
                                 <!-- logo close -->
@@ -51,7 +127,8 @@
                                         <li><a class="menu-item" href="kategori.html">Kategori Bilgileri</a></li>
                                         <li><a class="menu-item" href="sonuc.html">Sonuçlar </a></li>
                                         <li><a class="menu-item" href="sponsor.html">Sponsorlar</a></li>
-                                        <li><a class="menu-item" href="nasıl-basvuru-yapilir.html">Nasıl Başvuru Yaparım ? </a></li>
+                                        <li><a class="menu-item" href="nasıl-basvuru-yapilir.html">Nasıl Başvuru Yaparım
+                                                ? </a></li>
                                         <li><a class="menu-item" href="contact.html">İletişim</a></li>
                                     </ul>
                                 </div>
